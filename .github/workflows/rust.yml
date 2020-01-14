@@ -1,0 +1,15 @@
+name: Rust
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Rust MUSL Builder
+      uses: juankaram/rust-musl-action@v1.0.0
+      env:
+        BUILD_TARGET: x86_64-unknown-linux-musl
